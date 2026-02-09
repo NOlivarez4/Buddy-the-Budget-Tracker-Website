@@ -15,7 +15,7 @@
         "id": 2,
         "membership_name" : "Basic+",
         "membership_price" : 3,
-        "dur,ation": 30,
+        "duration": 30,
         "active" : true,
         "discount" : false,
         "date_created" : "Feb 6, 2026",
@@ -49,11 +49,12 @@
         "membership_name" : "Elite",
         "membership_price" : 15,
         "duration": 30,
-        "active" : true,
+        "active" : false,
         "discount" : true,
         "date_created" : "Feb 6, 2026",
         "trial_available" : false
         }
     ] 
 }
+
 
