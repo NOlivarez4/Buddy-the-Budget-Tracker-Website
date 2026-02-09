@@ -1,60 +1,54 @@
 {
-    "budget_subscription" :[
-        {
-        "id": 1,
-        "membership_name" : "Basic",
-        "membership_price" : 0,
-        "duration": 365,
-        "active" : true,
-        "discount" : false,
-        "date_created" : "Feb 6, 2026",
-        "trial_available" : false
-        },
-
-         {
-        "id": 2,
-        "membership_name" : "Basic+",
-        "membership_price" : 3,
-        "duration": 30,
-        "active" : true,
-        "discount" : false,
-        "date_created" : "Feb 6, 2026",
-        "trial_available" : true
-        },
-
-        {
-        "id": 3,
-        "membership_name" : "Pro",
-        "membership_price" : 5,
-        "duration": 30,
-        "active" : true,
-        "discount" : false,
-        "date_created" : "Feb 6, 2026",
-        "trial_available" : true
-        },
-
-         {
-        "id": 4,
-        "membership_name" : "Premium",
-        "membership_price" : 10,
-        "duration": 30,
-        "active" : true,
-        "discount" : true,
-        "date_created" : "Feb 6, 2026",
-        "trial_available" : true
-        },
-
-         {
-        "id": 5,
-        "membership_name" : "Elite",
-        "membership_price" : 15,
-        "duration": 30,
-        "active" : false,
-        "discount" : true,
-        "date_created" : "Feb 6, 2026",
-        "trial_available" : false
-        }
-    ] 
+  "budget_subscription": [
+    {
+      "id": 1,
+      "membership_name": "Basic",
+      "membership_price": 0,
+      "duration": 365,
+      "active": true,
+      "discount": false,
+      "date_created": "Feb 6, 2026",
+      "trial_available": false
+    },
+    {
+      "id": 2,
+      "membership_name": "Basic+",
+      "membership_price": 3,
+      "duration": 30,
+      "active": true,
+      "discount": false,
+      "date_created": "Feb 6, 2026",
+      "trial_available": true
+    },
+    {
+      "id": 3,
+      "membership_name": "Pro",
+      "membership_price": 5,
+      "duration": 30,
+      "active": true,
+      "discount": false,
+      "date_created": "Feb 6, 2026",
+      "trial_available": true
+    },
+    {
+      "id": 4,
+      "membership_name": "Premium",
+      "membership_price": 10,
+      "duration": 30,
+      "active": true,
+      "discount": true,
+      "date_created": "Feb 6, 2026",
+      "trial_available": true
+    },
+    {
+      "id": 5,
+      "membership_name": "Elite",
+      "membership_price": 15,
+      "duration": 30,
+      "active": false,
+      "discount": true,
+      "date_created": "Feb 6, 2026",
+      "trial_available": false
+    }
+  ]
 }
-
-
