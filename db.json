@@ -1,54 +1,85 @@
 {
-  "budget_subscription": [
+  "pricing": [
     {
-      "id": 1,
       "membership_name": "Basic",
-      "membership_price": 0,
-      "duration": 365,
-      "active": true,
-      "discount": false,
-      "date_created": "Feb 6, 2026",
-      "trial_available": false
+      "membership_price_text": "Free",
+      "description": "Essential budgeting tools, weekly spending tracker, and one savings goal.",
+      "image": "images/FreeBuddy.png"
     },
     {
-      "id": 2,
-      "membership_name": "Basic+",
-      "membership_price": 3,
-      "duration": 30,
-      "active": true,
-      "discount": false,
-      "date_created": "Feb 6, 2026",
-      "trial_available": true
-    },
-    {
-      "id": 3,
       "membership_name": "Pro",
-      "membership_price": 5,
-      "duration": 30,
-      "active": true,
-      "discount": false,
-      "date_created": "Feb 6, 2026",
-      "trial_available": true
+      "membership_price_text": "$5/month",
+      "description": "Unlimited budgets, multiple savings buckets, monthly summaries, and debt payoff tracking.",
+      "image": "images/ProBuddy.png"
+    },  {
+    "membership_name": "Basic+",
+    "membership_price_text": "$3/month",
+    "description": "Unlimited budgets, multiple savings buckets, monthly summaries, and debt payoff tracking.",
+    "image": "images/PlusBuddy.png",
+    "active": true,
+    "duration": 30
+  },
+  {
+    "membership_name": "Pro",
+    "membership_price_text": "$5/month",
+    "description": "Everything in Basic+, plus exportable reports, smart alerts, and personalized goal recommendations.",
+    "image": "images/ProBuddy.png",
+    "active": true,
+    "duration": 90
+  },
+  {
+    "membership_name": "Premium",
+    "membership_price_text": "$10/month",
+    "description": "Everything in Pro, plus shared budgets, category insights, and custom savings challenges.",
+    "image": "images/PremiumBuddy.png",
+    "active": true,
+    "duration": 180
+  },
+  {
+    "membership_name": "Elite",
+    "membership_price_text": "$15/month",
+    "description": "Everything in Premium, plus advanced forecasting, annual planning, and priority support.",
+    "image": "images/EliteBuddy.png",
+    "active": true,
+    "duration": 365
+  }
+  ],
+
+  "features": [
+    {
+      "title": "Weekly Budget Tracker",
+      "description": "Track weekly income and spending with simple visuals.",
+      "image": "images/WeeklyBuddy.png"
     },
     {
-      "id": 4,
-      "membership_name": "Premium",
-      "membership_price": 10,
-      "duration": 30,
-      "active": true,
-      "discount": true,
-      "date_created": "Feb 6, 2026",
-      "trial_available": true
+      "title": "Retirement Planning",
+      "description": "Set long-term savings goals, track retirement contributions, and monitor projected growth toward financial independence.",
+      "image": "images/RetirementBuddy.png"
     },
     {
-      "id": 5,
-      "membership_name": "Elite",
-      "membership_price": 15,
-      "duration": 30,
-      "active": false,
-      "discount": true,
-      "date_created": "Feb 6, 2026",
-      "trial_available": false
+      "title": "Savings Goals",
+      "description": "Create and monitor savings buckets like Roth IRA and emergency fund.",
+      "image": "images/SavingsBuddy.png"
+    },
+    {
+      "title": "Debt Payoff",
+      "description": "Track loan balances and payoff progress.",
+      "image": "images/DebtPayoffBuddy.png"
+    }
+  ],
+
+  "testimonials": [
+    {
+      "name": "Jennifer J. Omalley",
+      "text": "Buddy finally helped me understand where my money was going each week."
+    },
+    {
+      "name": "Christian T. Jackson",
+      "text": "The debt tracker kept me motivated every single week."
+    },
+    {
+      "name": "Connie L. Raymond",
+      "text": "It’s the first budgeting app I actually stuck with."
     }
   ]
 }
