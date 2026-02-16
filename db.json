@@ -4,7 +4,7 @@
     "membership_name": "Basic",
     "membership_price_text": "Free",
     "description": "Essential budgeting tools, weekly spending tracker, and one savings goal.",
-    "image": "images/FreeBuddy.png"
+    "image": "images/FreeBuddy.png",
     "active": true,
     "duration": 10000000000
   },
@@ -12,7 +12,7 @@
     "membership_name": "Pro",
     "membership_price_text": "$5/month",
     "description": "Unlimited budgets, multiple savings buckets, monthly summaries, and debt payoff tracking.",
-    "image": "images/ProBuddy.png"
+    "image": "images/ProBuddy.png",
     "active": true,
     "duration": 30
     },  
@@ -89,4 +89,5 @@
     }
   ]
 }
+
 
