@@ -1,17 +1,22 @@
 {
   "pricing": [
     {
-      "membership_name": "Basic",
-      "membership_price_text": "Free",
-      "description": "Essential budgeting tools, weekly spending tracker, and one savings goal.",
-      "image": "images/FreeBuddy.png"
-    },
+    "membership_name": "Basic",
+    "membership_price_text": "Free",
+    "description": "Essential budgeting tools, weekly spending tracker, and one savings goal.",
+    "image": "images/FreeBuddy.png"
+    "active": true,
+    "duration": 10000000000
+  },
+  {
+    "membership_name": "Pro",
+    "membership_price_text": "$5/month",
+    "description": "Unlimited budgets, multiple savings buckets, monthly summaries, and debt payoff tracking.",
+    "image": "images/ProBuddy.png"
+    "active": true,
+    "duration": 30
+    },  
     {
-      "membership_name": "Pro",
-      "membership_price_text": "$5/month",
-      "description": "Unlimited budgets, multiple savings buckets, monthly summaries, and debt payoff tracking.",
-      "image": "images/ProBuddy.png"
-    },  {
     "membership_name": "Basic+",
     "membership_price_text": "$3/month",
     "description": "Unlimited budgets, multiple savings buckets, monthly summaries, and debt payoff tracking.",
@@ -25,7 +30,7 @@
     "description": "Everything in Basic+, plus exportable reports, smart alerts, and personalized goal recommendations.",
     "image": "images/ProBuddy.png",
     "active": true,
-    "duration": 90
+    "duration": 30
   },
   {
     "membership_name": "Premium",
@@ -33,7 +38,7 @@
     "description": "Everything in Pro, plus shared budgets, category insights, and custom savings challenges.",
     "image": "images/PremiumBuddy.png",
     "active": true,
-    "duration": 180
+    "duration": 30
   },
   {
     "membership_name": "Elite",
@@ -41,7 +46,7 @@
     "description": "Everything in Premium, plus advanced forecasting, annual planning, and priority support.",
     "image": "images/EliteBuddy.png",
     "active": true,
-    "duration": 365
+    "duration": 30
   }
   ],
 
@@ -72,6 +77,7 @@
     {
       "name": "Jennifer J. Omalley",
       "text": "Buddy finally helped me understand where my money was going each week."
+      
     },
     {
       "name": "Christian T. Jackson",
@@ -83,3 +89,4 @@
     }
   ]
 }
+
