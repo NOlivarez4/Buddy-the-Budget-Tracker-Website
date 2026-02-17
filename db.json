@@ -69,7 +69,7 @@
   "features": [
     {
       "title": "Weekly Budget Tracker",
-      "description": "Track weekly income and spending with simple visuals.",
+      "description": "Set simple spending limits for gas, groceries, dining, shopping, and more, with automatic updates as you log purchases.",
       "image": "images/WeeklyBuddy.png"
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "title": "Savings Goals",
-      "description": "Create and monitor savings buckets like Roth IRA and emergency fund.",
+      "description": "Create savings buckets—like Roth IRA, emergency fund, or vacation—and watch your progress grow with clean, easy-to-read visuals.",
       "image": "images/SavingsBuddy.png"
     },
     {
       "title": "Debt Payoff",
-      "description": "Track loan balances and payoff progress.",
+      "description": "Track balances, payment progress, and estimated payoff dates to stay motivated and see how each week gets you closer to financial freedom.",
       "image": "images/DebtPayoffBuddy.png"
     }
   ],
@@ -108,3 +108,4 @@
     }
   ]
 }
+
