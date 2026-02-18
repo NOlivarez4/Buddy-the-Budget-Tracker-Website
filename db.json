@@ -4,7 +4,7 @@
       "membership_name": "Basic",
       "membership_price_text": "Free",
       "description": "Essential budgeting tools, weekly spending tracker, and one savings goal.",
-      "image": "images/FreeBuddy.png",
+      "image": "images/BasicBuddy.png",
       "active": true,
       "duration": 10000000000
     },
@@ -12,7 +12,7 @@
       "membership_name": "Basic+",
       "membership_price_text": "$3/month",
       "description": "Everything in Basic plus unlimited savings buckets.",
-      "image": "images/PlusBuddy.png",
+      "image": "images/Basic+Buddy.png",
       "active": true,
       "duration": 30
     },
@@ -28,7 +28,7 @@
       "membership_name": "Pro+",
       "membership_price_text": "$7/month",
       "description": "Includes exportable reports and smart alerts.",
-      "image": "images/ProBuddy.png",
+      "image": "images/Pro+Buddy.png",
       "active": true,
       "duration": 30
     },
@@ -44,7 +44,7 @@
       "membership_name": "Premium+",
       "membership_price_text": "$12/month",
       "description": "Advanced forecasting and annual planning tools.",
-      "image": "images/PremiumBuddy.png",
+      "image": "images/Premium+Buddy.png",
       "active": true,
       "duration": 30
     },
@@ -60,7 +60,7 @@
       "membership_name": "Enterprise",
       "membership_price_text": "$25/month",
       "description": "Team budgeting, analytics dashboard, and full customization.",
-      "image": "images/EliteBuddy.png",
+      "image": "images/EnterpriseBuddy.png",
       "active": true,
       "duration": 30
     }
@@ -85,7 +85,7 @@
     {
       "title": "Debt Payoff",
       "description": "Track balances, payment progress, and estimated payoff dates to stay motivated and see how each week gets you closer to financial freedom.",
-      "image": "images/DebtPayoffBuddy.png"
+      "image": "images/DebtBuddy.png"
     }
   ],
 
@@ -108,4 +108,5 @@
     }
   ]
 }
+
 
