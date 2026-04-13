@@ -45,8 +45,9 @@ const server = http.createServer((req, res) => {
     else if (req.url === '/api' && req.method === 'GET') {
         buddyCollection.find({}).toArray()
             .then(results => {
+                const output = results.length === 1 ? results[0] : results;
                 res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify(results));
+                res.end(JSON.stringify(output));
             })
             .catch(err => {
                 res.writeHead(500, { 'Content-Type': 'application/json' });
