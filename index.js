@@ -1,3 +1,6 @@
+//MONGODB_URI=mongodb+srv://nathalia:olivarez@olivarez355.bnvq1eb.mongodb.net/?retryWrites=true&w=majority
+
+
 const dns = require('dns');
 dns.setServers(['8.8.8.8', '1.1.1.1']);
 
@@ -53,6 +56,33 @@ const server = http.createServer((req, res) => {
             .catch(err => {
                 res.writeHead(500, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ error: "Failed to fetch buddy data" }));
+            });
+    }
+    else if (req.url.startsWith('/api/') && req.method === 'GET') {
+        const id = Number(req.url.split('/')[2]);
+
+        buddyCollection.findOne({})
+            .then(result => {
+                const allItems = [
+                    ...result.pricing,
+                    ...result.features,
+                    ...result.testimonials
+                ];
+
+                const item = allItems.find(entry => entry.id === id);
+
+                if (!item) {
+                    res.writeHead(404, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: "Item not found" }));
+                    return;
+                }
+
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify(item));
+            })
+            .catch(err => {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: "Failed to fetch item" }));
             });
     }
     else if (req.url === '/api' && req.method === 'POST') {
