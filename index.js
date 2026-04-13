@@ -12,11 +12,17 @@ console.log("ENV:", process.env.MONGODB_URI);
 
 const client = new MongoClient(uri);
 
-let buddyCollection;
+let pricingCollection;
+let featuresCollection;
+let testimonialsCollection;
+
 async function connectDB() {
     try {
         await client.connect();
-        buddyCollection = client.db("buddydb").collection("buddyData");
+        const db = client.db("buddydb");
+        pricingCollection = db.collection("pricing");
+        featuresCollection = db.collection("features");
+        testimonialsCollection = db.collection("testimonials");
         console.log("Connected to MongoDB");
     } catch (e) {
         console.error("MongoDB connection failed:", e);
@@ -43,9 +49,13 @@ const server = http.createServer((req, res) => {
         );
     }
     else if (req.url === '/api' && req.method === 'GET') {
-        buddyCollection.find({}).toArray()
-            .then(results => {
-                const output = results.length === 1 ? results[0] : results;
+        Promise.all([
+            pricingCollection.find({}).toArray(),
+            featuresCollection.find({}).toArray(),
+            testimonialsCollection.find({}).toArray()
+        ])
+            .then(([pricing, features, testimonials]) => {
+                const output = { pricing, features, testimonials };
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify(output));
             })
@@ -59,7 +69,21 @@ const server = http.createServer((req, res) => {
         req.on('data', chunk => { body += chunk; });
         req.on('end', () => {
             const buddyItem = JSON.parse(body);
-            buddyCollection.insertOne(buddyItem)
+            const { category, ...document } = buddyItem;
+
+            const collections = {
+                pricing: pricingCollection,
+                features: featuresCollection,
+                testimonials: testimonialsCollection
+            };
+
+            if (!collections[category]) {
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ error: "Category must be pricing, features, or testimonials" }));
+                return;
+            }
+
+            collections[category].insertOne(document)
                 .then(result => {
                     res.writeHead(201, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify(result));
@@ -71,7 +95,21 @@ const server = http.createServer((req, res) => {
         });
     }
     else if (req.url.startsWith('/api/') && req.method === 'PUT') {
-        const id = req.url.split('/')[2];
+        const parts = req.url.split('/');
+        const category = parts[2];
+        const id = parts[3];
+
+        const collections = {
+            pricing: pricingCollection,
+            features: featuresCollection,
+            testimonials: testimonialsCollection
+        };
+
+        if (!collections[category] || !id) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Use /api/:category/:id for updates" }));
+            return;
+        }
 
         let body = '';
         req.on('data', chunk => { body += chunk; });
@@ -80,7 +118,7 @@ const server = http.createServer((req, res) => {
             const updates = JSON.parse(body);
             console.log(updates);
 
-            buddyCollection.updateOne(
+            collections[category].updateOne(
                 { _id: new ObjectId(id) },
                 { $set: updates }
             ).then(result => {
@@ -96,8 +134,23 @@ const server = http.createServer((req, res) => {
     }
 
     else if (req.url.startsWith('/api/') && req.method === 'DELETE') {
-        const id = req.url.split('/')[2];
-        buddyCollection.deleteOne({ _id: new ObjectId(id) })
+        const parts = req.url.split('/');
+        const category = parts[2];
+        const id = parts[3];
+
+        const collections = {
+            pricing: pricingCollection,
+            features: featuresCollection,
+            testimonials: testimonialsCollection
+        };
+
+        if (!collections[category] || !id) {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: "Use /api/:category/:id for deletes" }));
+            return;
+        }
+
+        collections[category].deleteOne({ _id: new ObjectId(id) })
             .then(result => {
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify(result));
