@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Buddy's Products</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+      color: #000000;
+    }
+
+    header {
+      background-color: #48a8f0;
+
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      background-color: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1,
+    h2 {
+      margin-top: 0;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #79C6F9;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #48a8f0;
+    }
+
+    #productsList div {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Dashboard</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <section>
+    <h2>Create a Product</h2>
+
+    <form id="createProductForm">
+      <input type="text" id="id" placeholder="Enter an id" required>
+      <input type="text" id="membership_name" placeholder="Enter a Membership" required>
+      <input type="text" id="membership_price_text" placeholder="Enter a price" required>
+      <input type="text" id="description" placeholder="Enter a description" required><br>
+      <input type="text" id="image" placeholder="Enter an image path" required>
+      <input type="text" id="active" placeholder="Active? True or False" required>
+      <input type="text" id="duration" placeholder="Enter duration" required>
+
+      <button type="submit">Add Product</button>
+    </form>
+
+    <p id="createMsg" style="color:green;"></p>
+  </section>
+
+  <section>
+    <h2>All Products</h2>
+    <div id="productsList"></div>
+  </section>
+
+  <section id="editSection" style="display:none;">
+    <h2>Edit Product</h2>
+
+    <input type="hidden" id="editProductId">
+    <input type="text" id="editMembershipName" placeholder="Updated Product">
+    <input type="text" id="editMembershipPriceText" placeholder="Updated Price">
+    <input type="text" id="editDescription" placeholder="Updated Description">
+    <input type="text" id="editImage" placeholder="Updated Image Path">
+    <input type="text" id="editActive" placeholder="true or false">
+    <input type="text" id="editDuration" placeholder="Updated Duration">
+
+    <button id="saveEditBtn">Save</button>
+    <button id="cancelEditBtn">Cancel</button>
+
+    <p id="editMsg" style="color:green;"></p>
+  </section>
+
+  <script src="js/pricing.js"></script>
+</body>
+
+</html>
