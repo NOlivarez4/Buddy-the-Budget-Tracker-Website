@@ -124,6 +124,12 @@ const getMe = asyncHandler(async (req, res) => {
     })
 })
 
+const getUsers = asyncHandler(async (req, res) => {
+    const users = await User.find({}).select('-password')
+    res.status(200).json(users)
+})
+
+
 
 // ─────────────────────────────────────────────
 // Helper: Generate a signed JSON Web Token (JWT)
@@ -144,5 +150,6 @@ const generateToken = (id) => {
 module.exports = {
     registerUser,
     loginUser,
-    getMe
+    getMe,
+    getUsers
 }
