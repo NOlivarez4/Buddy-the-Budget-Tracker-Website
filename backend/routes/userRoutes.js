@@ -7,6 +7,7 @@ const {
   registerUser, // POST / — creates a new user account with a hashed password
   loginUser,    // POST /login — validates credentials and returns a JWT
   getMe,        // GET  /me   — returns the profile of the currently logged-in user
+  getUsers
 } = require('../controllers/userController')
 
 // Import the `protect` middleware — validates the JWT on any route that requires authentication.
@@ -17,7 +18,7 @@ const { protect } = require('../middleware/authMiddleware')
 // Public — no token required. Accepts { name, email, password } in the request body.
 // Registers a new user and returns a JWT so the client is authenticated immediately.
 
-router.post('/', registerUser)
+router.route('/').get(getUsers).post(registerUser)
 
 // ---- POST /api/users/login -------------------------- 
 // Public — no token required. Accepts { email, password } in the request body.
